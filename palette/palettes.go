@@ -17,6 +17,8 @@ var (
 	Resene gamut.Palette
 	// RAL Palette
 	RAL gamut.Palette
+	// FreieFarbe CIELAB HLC Colour Atlas
+	FreieFarbeHLCAtlas gamut.Palette
 )
 
 // AllPalettes returns a mix of all palettes defined in gamut
@@ -2822,5 +2824,15 @@ func init() {
 			{"Papyrus white", gamut.Hex("#CFD3CD"), "9018"},
 			{"Pearl light grey", gamut.Hex("#9C9C9C"), "9022"},
 			{"Pearl dark grey", gamut.Hex("#828282"), "9023"},
+		})
+
+	// source: https://www.freiefarbe.de/
+	// license: (c) 2018 freieFarbe e.V. CC BY­ND 4.0
+	// reference number only for sorting
+	FreieFarbeHLCAtlas.AddColors(
+		gamut.Colors{
+			{"H240_L55_C050", gamut.Hex("#0092CD"), "1"},
+			{"H240_L55_C060", gamut.Hex("#0094DD"), "2"},
+			{"H240_L65_C070", gamut.Hex("#0097EE"), "3"},
 		})
 }
